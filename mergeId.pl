@@ -17,8 +17,7 @@ while ($line) {
 
 chomp $line;
 my $nextline = <FH>;
-print "\nthe last currentline : $line\n";
-print "the last nextline: $nextline\n";
+
 if ( !$nextline ) {
 	print "OK";
 	if ($repeat==0) {
@@ -35,28 +34,26 @@ if ( !$nextline ) {
 
 else {
 	
-	#print "MY line : $line";
-	#print "Next line : $nextline\n";
+	
 
 	@cl = split(/\t/, $line);
 	@nl = split(/\t/, $nextline);
 
 	if ( @cl[0] =~ @nl[0] ) {
-		#print "R : $repeat\n";
+		
 		chomp @cl[2];
 		chomp @nl[2];
 
 		if ($repeat == 0) {
 
 			if (@cl[2]) {
-			#print "CL : @cl[2], nl : @nl[2]";
+			
 				$merge = @cl[2].'|'.@nl[2]; 
 			}
 			else {
 				$merge = @cl[2].@nl[2];
 			}
-			#print "MERGE : $merge\n";
-			#$merge = join('|', @cl[2], @nl[2]);
+			
 		}
 		else {
 			chomp $merge;
