@@ -1,6 +1,7 @@
 
 #more than one line have same id but different info. 
 #we want to merge the info for the same id.
+#to use it: perl mergeId.pl <file>
 
 my $ofile = $ARGV[0];
 open FH, $ofile;
